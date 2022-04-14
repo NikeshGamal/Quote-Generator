@@ -36,16 +36,14 @@ const getQuotes=async ()=>{
     newQuote(apiQuotes);
 }
 
+//Twweet Quote
+function tweetQuote(){
+    const tweetUrl=`https://twitter.com/intent/tweet?text=${quoteContent.textContent} - ${authorContent.textContent}`;
+    window.open(tweetUrl,'_blank');
+}
 //IIFE
 //to fill up the quote when the page loades
 (getQuotes());
-
-
-//Twweet Quote
-function tweetQuote(){
-    let tweetUrl=`https://twitter.com/intent/tweet?text=${quoteContent.text} - ${authorContent}`;
-    window.open(tweetUrl,'_blank');
-}
 
 //Adding event listener
 nextQuoteButton.addEventListener('click',getQuotes);
